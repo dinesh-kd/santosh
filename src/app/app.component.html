@@ -1,31 +1,16 @@
-<table>
-  <tr>
-    <td>Student Name</td>
-    <td>:</td>
-    <td>{{ profile.name }}</td>
-  </tr>
-  <tr>
-    <td>Type</td>
-    <td>:</td>
-    <td>{{ profile.marital_status != 'Married' ? 'Old' : 'Young' }}</td>
-  </tr>
-  <tr [hidden]="!imageStatus">
-    <td>Profile image</td>
-    <td>:</td>
-    <td>
-      <img [src]="profile.image" [width]="imagewidth" />
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <input type="button" (click)="hideImage()" value="Chnage" />
-    </td>
-  </tr>
-  <tr>
-    <td>Change name </td>
-    <td>:</td>
-    <td>
-      <input type="text" [(ngModel)]="profile.name" />
-    </td>
-  </tr>
-</table>
+
+
+<app-profile
+[details]="profile"
+[profileid]="1"
+(hideMap)="toggleMap()"
+></app-profile>
+
+
+
+<div *ngIf="mapStatus">
+  Map container
+</div>
+
+
+button ==> buttonclick ==> hideMapIN ==> hideMap ==> toggleMap

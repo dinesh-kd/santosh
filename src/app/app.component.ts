@@ -13,11 +13,10 @@ export class AppComponent {
     image : 'https://loremflickr.com/320/240'
   };
 
-  imagewidth = 25;
-  imageStatus = true;
+  mapStatus = true;
 
-  hideImage() {
-    this.imageStatus = false;
-    this.profile.name = 'Dinesh';
+  toggleMap(data) {
+    console.log(data)
+    this.mapStatus = false;
   }
 }
